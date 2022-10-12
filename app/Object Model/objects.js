@@ -70,3 +70,44 @@
 
 
 
+// MUTABILITY
+
+ // js objects are mutable , so that the contents of objects are modified and can be updated
+ // JS objects contain arrays and functions 
+
+//   const obj =  {
+//     name :"saad",
+//     number : 10
+//   };
+  
+  
+//   const obj1 = obj;
+//   obj.number++;
+//   console.log(obj1);
+
+//   const obj2 = {
+//     name :"saad",
+//     number : 10
+//   };
+
+  // obj === obj1;   prints true because the grasp the same object
+  // obj === obj2 ;  prints false bcz they may have the same info but not grasp the same object
+
+  let newObj = {
+    total:65,
+    increment:1
+  };
+  // function
+  const incrementTotal = function(obj,val) {
+    obj.increment= val;
+    return function() {
+        console.log(obj.total)
+        obj.increment = obj.total;
+        console.log(obj.total);
+    };
+  };
+
+ const incBy1 = incrementTotal(newObj,1);
+ const incBy2 = incrementTotal(newObj,2);
+
+
